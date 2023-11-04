@@ -3,7 +3,7 @@
 Today, we're going to create our own ransomware.  
 Aha, sounds interesting? It's not so complicated to build a simple one. We just need a system to test on where python is installed.  
 
-> DISCLAIMER: This whole article is purely for educational purpose only. My sole aim here is to teach how to create your own ransomware script in python3.  
+> DISCLAIMER: [The article](https://dev.to/nitinkumar30/how-to-create-ransomware-script-in-python-test-28i0) I've written is purely for educational purpose only. My sole aim here is to teach how to create your ransomware script in python3.  
 
 ---
 
