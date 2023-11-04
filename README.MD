@@ -1,32 +1,32 @@
 # Create ransomware script in python & test
 
-Today, we're going to create our own ransomware.
-Aha, sounds interesting? It's not so complicated to build a simple one. We just need a system to test on where python is installed.
+Today, we're going to create our own ransomware.  
+Aha, sounds interesting? It's not so complicated to build a simple one. We just need a system to test on where python is installed.  
 
-> DISCLAIMER: This whole article is purely for educational purpose only. My sole aim here is to teach how to create your own ransomware script in python3.
+> DISCLAIMER: This whole article is purely for educational purpose only. My sole aim here is to teach how to create your own ransomware script in python3.  
 
 ---
 
 ## What is a ransomware??
 
-Ransomware is a malware designed to deny a user or organization access to files on their computer. By encrypting these files and demanding a ransom payment for the decryption key, cyberattackers place organizations in a position where paying the ransom is the easiest and cheapest way to regain access to their files.
+Ransomware is a malware designed to deny a user or organization access to files on their computer. By encrypting these files and demanding a ransom payment for the decryption key, cyberattackers place organizations in a position where paying the ransom is the easiest and cheapest way to regain access to their files.  
 
-The malware first gains access to the device. Depending on the type of ransomware, either the entire operating system or individual files are encrypted. A ransom is then demanded from the victim.
+The malware first gains access to the device. Depending on the type of ransomware, either the entire operating system or individual files are encrypted. A ransom is then demanded from the victim.  
 
 ---
 
 ## Requirements:
 
-1. A linux-based OS or [Windows Subsystem for Linux](https://dev.to/nitinkumar30/use-search-files-created-using-ubuntu-on-windows-1jid)
-2. Internet connection
+1. A linux-based OS or [Windows Subsystem for Linux](https://dev.to/nitinkumar30/use-search-files-created-using-ubuntu-on-windows-1jid)  
+2. Internet connection  
 
 ---
 
 ## Our approach !!
 
-1. First, we'll need encrypt method which can encrypt the files
-2. Then, we need to decrypt mthod which can decrypt the encrypted files if ransom is provided
-3. We also need to keep key, which was used to encrypt the files & folders, so that decrypt the files, once ransom is fulfilled
+1. First, we'll need encrypt method which can encrypt the files  
+2. Then, we need to decrypt mthod which can decrypt the encrypted files if ransom is provided  
+3. We also need to keep key, which was used to encrypt the files & folders, so that decrypt the files, once ransom is fulfilled  
 
 ---
 
@@ -34,19 +34,19 @@ The malware first gains access to the device. Depending on the type of ransomwar
 
 Let's break this into small chunks:
 
-1. Create necessary files & folders
-2. Write down our script for Encrypting the files
-3. Write down our script for Decrypting the files
-4. Giving the finishing touch to the project
+1. Create necessary files & folders  
+2. Write down our script for Encrypting the files  
+3. Write down our script for Decrypting the files  
+4. Giving the finishing touch to the project  
 
 ---
 
 ## 1. Create necessary files & folders
 
-Step 1: As everything is configured for you, open the Ubuntu on Windows. If not yet, checkout my recent post on it [here](https://dev.to/nitinkumar30/use-search-files-created-using-ubuntu-on-windows-1jid)
+Step 1: As everything is configured for you, open the Ubuntu on Windows. If not yet, checkout my recent post on it [here](https://dev.to/nitinkumar30/use-search-files-created-using-ubuntu-on-windows-1jid)  
 Step 2: Create a new folder using `mkdir ransomware` to create a directory named **ransomware**  
-Step 3: Navigate to that directory using `cd ransomware`
-Step 4: Create some random files with below commands:
+Step 3: Navigate to that directory using `cd ransomware`  
+Step 4: Create some random files with below commands:  
         
 
 ```
@@ -74,8 +74,8 @@ Step 6: You can check the contents of the files just created by running **cat** 
 
 ## 2. Write down our script for Encrypting the files
 
-Step 1: Now, we need to create our encrypting file to encrypt the required files, type the command - `nano voldemort.py`. This will create a python file with name voldemort & will open in vim editor.
-Step 2: Following is the python code for encryption part.
+Step 1: Now, we need to create our encrypting file to encrypt the required files, type the command - `nano voldemort.py`. This will create a python file with name voldemort & will open in vim editor.  
+Step 2: Following is the python code for encryption part.  
 
 
 ```
@@ -122,10 +122,10 @@ print("All your files has been encrypted !!\nSend me 100 Bitcoins or I'll delete
 
 ---
 
-## 3. Write down our script for Decrypting the files
+## 3. Write down our script for Decrypting the files  
 
 Step 1: Now, we need to create our decrypting file. Type in the command - `nano decrypt.py`  
-Step 2: Following is the python code for decryption part.
+Step 2: Following is the python code for decryption part.  
 
 ```
 #!/usr/bin/env python3
@@ -174,25 +174,25 @@ else:
 
 ---
 
-## 4. Giving the finishing touch to the project
+## 4. Giving the finishing touch to the project  
 
 Now is the time to test our ransomware is working or not.
 
-Here, we'll check by first checking the files are having decrypted data or not.
-Then, we'll run the encrypt file & check the files are encrypted or not
-Then, we'll run the decrypt file & check the files are decrypted with original data or not.
+Here, we'll check by first checking the files are having decrypted data or not.  
+Then, we'll run the encrypt file & check the files are encrypted or not  
+Then, we'll run the decrypt file & check the files are decrypted with original data or not.  
 
-Step 1: Run the command - `cat file.txt` & then for remaining files
-Step 2: Run the encrypting file - `python3 voldemort.py`
-Step 3: Rerun step 1. You should see some random string is there in the contents of files
-Step 4: Now, run the decrypting file - `python3 decrypt.py`. Give secretphrase as **coffee** to pass the security check. You can change it in decrypt file.
-Step 5: Rerun step 1. You should see now, all the files will have original data of files. 
+Step 1: Run the command - `cat file.txt` & then for remaining files  
+Step 2: Run the encrypting file - `python3 voldemort.py`  
+Step 3: Rerun step 1. You should see some random string is there in the contents of files  
+Step 4: Now, run the decrypting file - `python3 decrypt.py`. Give secretphrase as **coffee** to pass the security check. You can change it in decrypt file.  
+Step 5: Rerun step 1. You should see now, all the files will have original data of files.   
 
 ---
 
-Note - Never run the encrypt file twice, else, you'll not be able to recover your files again. You can run encrypt file n number of times, but not the decrypt file.
+Note - Never run the encrypt file twice, else, you'll not be able to recover your files again. You can run encrypt file n number of times, but not the decrypt file.  
 
-- This complete tutorial can be found in [NetworkChuck video](https://youtu.be/UtMMjXOlRQc?si=UeHz6Wyy4IohhAPt)
+- This complete tutorial can be found in [NetworkChuck video](https://youtu.be/UtMMjXOlRQc?si=UeHz6Wyy4IohhAPt)  
 
 ---
 
