@@ -1,4 +1,4 @@
-# Create ransomware script in python & test
+# Create ransomware script in python
 
 Today, we're going to create our own ransomware.  
 Aha, sounds interesting? It's not so complicated to build a simple one. We just need a system to test on where python is installed.  
@@ -26,7 +26,7 @@ The malware first gains access to the device. Depending on the type of ransomwar
 
 1. First, we'll need encrypt method which can encrypt the files  
 2. Then, we need to decrypt mthod which can decrypt the encrypted files if ransom is provided  
-3. We also need to keep key, which was used to encrypt the files & folders, so that decrypt the files, once ransom is fulfilled  
+3. We also need to keep key, which will be used to encrypt the files & folders, & then decrypt the files, once ransom is fulfilled  
 
 ---
 
